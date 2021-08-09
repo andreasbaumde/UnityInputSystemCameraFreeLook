@@ -31,6 +31,9 @@ public class FreeLook : MonoBehaviour
     float TurnSpeed = 3f;
 
     [SerializeField]
+    float VerticalMovementSpeed = 1f;
+
+    [SerializeField]
     Transform SpawnAt;
 
     [SerializeField]
@@ -127,8 +130,8 @@ public class FreeLook : MonoBehaviour
         Vector3 moveDirection = (transform.forward * MovementInputH + MovementInputV * transform.right).normalized;
 
         // Check Move Up/Down
-        if(MoveUp) moveDirection.y = +1.0f;
-        else if(MoveDown) moveDirection.y = -1.0f;
+        if(MoveUp) moveDirection.y += VerticalMovementSpeed;
+        else if(MoveDown) moveDirection.y -= VerticalMovementSpeed;
 
         // Set position
         transform.position = transform.position + moveDirection * MovementSpeed * Time.deltaTime;
