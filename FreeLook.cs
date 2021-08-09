@@ -92,9 +92,9 @@ public class FreeLook : MonoBehaviour
 
         if (MoveDownInputAction != null)
         {
-            MoveDownInputAction.started += OnMoveUp;
-            MoveDownInputAction.performed += OnMoveUp;
-            MoveDownInputAction.canceled += OnMoveUp;
+            MoveDownInputAction.started += OnMoveDown;
+            MoveDownInputAction.performed += OnMoveDown;
+            MoveDownInputAction.canceled += OnMoveDown;
         }
         else
         {
